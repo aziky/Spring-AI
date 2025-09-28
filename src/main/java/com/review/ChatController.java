@@ -10,7 +10,6 @@ import java.util.Map;
 
 @RestController
 @Slf4j
-@CrossOrigin(origins = "*")
 public class ChatController {
 
     private final ChatService chatService;
