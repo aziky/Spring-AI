@@ -1,18 +1,11 @@
-#services:
-#  postgres:
-#    image: pgvector/pgvector:pg17
-#    container_name: postgres-hcm202
-#    environment:
-#      - POSTGRES_USER=postgres
-#      - POSTGRES_PASSWORD=postgres
-#      - POSTGRES_DB=hcm202
-#    ports:
-#      - "5433:5432"
-#    volumes:
-#      - postgres_data:/var/lib/postgresql/data
-#
-#volumes:
-#  postgres_data:
-#    name: postgres_data_hcm202
-#    driver: local
-#
+version: "3.8"
+services:
+  spring-ai-app:
+    build: .
+    container_name: spring-ai-app
+    ports:
+      - "8080:8080"
+    environment:
+      # Bạn có thể khai báo biến môi trường ở đây
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    restart: always
