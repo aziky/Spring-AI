@@ -26,5 +26,12 @@ public class PromptConfig {
             return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
         }
     }
+    @Bean
+    public String getDocumentForVNR() throws IOException {
+        var resource = new ClassPathResource("VNR202_document.txt");
+        try (var inputStream = resource.getInputStream()) {
+            return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+        }
+    }
 
 }

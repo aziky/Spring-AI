@@ -12,6 +12,7 @@ COPY .env .env
 
 COPY src/main/resources/HCM202_document.txt HCM202_document.txt
 COPY src/main/resources/MLN131_document.txt MLN131_document.txt
+COPY src/main/resources/VNR202_document.txt VNR202_document.txt
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]

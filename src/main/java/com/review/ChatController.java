@@ -50,4 +50,19 @@ public class ChatController {
             return Map.of("message", "Có lỗi xảy ra khi xử lý câu hỏi");
         }
     }
+
+    @PostMapping("/vnr")
+    public Map<String, String> askVNR(@RequestBody Map<String, Object> request) {
+        try {
+            String question = (String) request.get("question");
+
+            String answer = chatService.askVNR(question);
+
+            return Map.of("message", answer);
+
+        } catch (Exception e) {
+            log.error("Error in VNR Q&A: ", e);
+            return Map.of("message", "Có lỗi xảy ra khi xử lý câu hỏi");
+        }
+    }
 }
