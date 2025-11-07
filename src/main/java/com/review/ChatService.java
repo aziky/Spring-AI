@@ -36,6 +36,11 @@ public class ChatService {
         return askWithSource(question, context, "Lịch sử Đảng Cộng sản Việt Nam");
     }
 
+    public String askVNR_V2(String question) throws IOException {
+        String context = promptConfig.getDocumentForVNR_V2();
+        return askWithSource(question, context, "Lịch sử Đảng Cộng sản Việt Nam");
+    }
+
 
     private String askWithSource(String question, String context, String subject) {
 
